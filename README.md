@@ -2,13 +2,13 @@
 
 Windows low-level keyboard hook written in C#. This library was NOT created for malicious purposes.
 
-##Installation
-```
+## Installation
+```PowerShell
 Install-Package KeyboardInterceptor
 ```
 
-##Usage
-```
+## Usage
+```csharp
 var interceptor = new Interceptor(key =>{
 	//Do something.
 });
@@ -18,8 +18,8 @@ interceptor.Start(); //On application start.
 interceptor.Stop(); //On application end.
 ```
 
-###Custom Resolver
-```
+### Custom Resolver
+```csharp
 public MyCustomResolver : IKeyResolver
 {
 	public void Resolve(Key key){
@@ -28,8 +28,8 @@ public MyCustomResolver : IKeyResolver
 }
 ```
 
-###Abstract Sequence Resolver
-```
+### Abstract Sequence Resolver
+```csharp
 public class ConcreteSequenceResolver : AbstractSequenceKeyResolver
 {
     public ConcreteSequenceResolver(IEnumerable<Key> sequence) : base(sequence)
